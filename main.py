@@ -315,7 +315,8 @@ class CameraScreen(Screen):
         timestr = time.strftime("%Y%m%d_%H%M%S")
         filename = 'IMG_{}.png'.format(timestr)
         camera.export_to_png(filename)
-        process_image(filename)
+        process_image(filename, DATABASE)
+        self.manager.current = 'result'
 
 
 class UploadScreen(Screen):
